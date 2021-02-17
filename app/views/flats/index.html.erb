@@ -8,10 +8,10 @@
         <h5 class="card-title"><%= flat.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
         <div class="d-flex justify-content-around">
-          <p class="card-text"><i class="fa fa-user" aria-hidden="true"></i><%= flat.number_of_guests %></p>
-          <p class="card-text"><i class="fas fa-euro-sign"></i></i><%= flat.price_per_night %></p>
+          <p class="card-text"><i class="fa fa-user p-2" aria-hidden="true"></i><%= flat.number_of_guests %></p>
+          <p class="card-text"><i class="fas fa-euro-sign p-2"></i></i><%= flat.price_per_night %></p>
         </div>
-        <a href="#" class="card-link">Card link</a>
+        <%= link_to 'More info', flat_path(flat), class: 'card-link' %>
         <a href="#" class="card-link">Another link</a>
       </div>
     </div>
