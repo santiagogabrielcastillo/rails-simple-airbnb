@@ -12,7 +12,7 @@
           <p class="card-text"><i class="fas fa-euro-sign p-2"></i></i><%= flat.price_per_night %></p>
         </div>
         <%= link_to 'More info', flat_path(flat), class: 'card-link' %>
-        <a href="#" class="card-link">Another link</a>
+        <%= link_to 'Edit flat', edit_flat_path(flat), class: 'card-link text-warning' %>
       </div>
     </div>
   </div>
