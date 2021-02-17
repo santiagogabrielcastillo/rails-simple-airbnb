@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[edit update]
+  before_action :set_flat, only: %i[edit update destroy]
   
   def index
     @flats = Flat.all
@@ -18,7 +18,7 @@ class FlatsController < ApplicationController
     if @flat.save
       redirect_to flat_path(@flat)
     else
-      :new
+      render :new
     end
   end
 
@@ -30,8 +30,13 @@ class FlatsController < ApplicationController
     if @flat.save
       redirect_to flat_path(@flat)
     else
-      :edit
+      render :edit
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flats_path
   end
 
   private

@@ -2,7 +2,7 @@
 
 <div class="row d-flex">
   <% @flats.each do |flat| %>
-  <div class="col-12 col-lg-4 my-3">
+  <div class="col-12 col-md-6 col-lg-4 my-3">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= flat.name %></h5>
@@ -12,7 +12,8 @@
           <p class="card-text"><i class="fas fa-euro-sign p-2"></i></i><%= flat.price_per_night %></p>
         </div>
         <%= link_to 'More info', flat_path(flat), class: 'card-link' %>
-        <%= link_to 'Edit flat', edit_flat_path(flat), class: 'card-link text-warning' %>
+        <%= link_to 'Edit', edit_flat_path(flat), class: 'card-link text-warning' %>
+        <%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'card-link text-danger' %>
       </div>
     </div>
   </div>
